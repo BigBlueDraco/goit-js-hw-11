@@ -2,7 +2,7 @@ import axios from "axios";
 
 export class pixabayAPI{
     static baseUrl = "https://pixabay.com/api/";
-    static query = "";
+    static query = "cat";
     static key = "29897039-6335e8959bf94ffd3acb5a033"
     static image_type ="photo"
     static per_page = "10"

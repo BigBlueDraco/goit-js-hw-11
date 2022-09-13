@@ -1,10 +1,9 @@
 import { pixabayAPI } from "./pixabayAPI";
 
-export async function displayGallery(){
-    const res = await pixabayAPI.fetchImg("cat");
+export async function displayGallery(q){
+    const res = await pixabayAPI.fetchImg(q);
     const countryInfo = document.querySelector(".js-gallery");
-    countryInfo.insertAdjacentHTML = galleryMarkup(res);
-    console.log(res);
+    countryInfo.innerHTML = galleryMarkup(res);
 }
 
 function galleryMarkup(arr = []){
@@ -17,8 +16,6 @@ function galleryMarkup(arr = []){
                 downloads,
                 views
             }= elem;
-            console.log(elem.largeImageURL)
-            console.log(elem.webformatURL)
             acc += 
             `<div class="photo-card">
             <img
