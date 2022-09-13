@@ -42,7 +42,8 @@ function galleryMarkup(arr = []){
                 views
             }= elem;
             acc += 
-            `<div class="photo-card">
+            `
+            <div class="photo-card">
             <img
               class="photo-card__img"
               src="${largeImageURL}"
@@ -63,7 +64,8 @@ function galleryMarkup(arr = []){
                 <b>Downloads</b> ${downloads}
               </p>
             </div>
-          </div>`;
+          </div>
+          `;
         return acc;
     }, "");
 }
