@@ -1,0 +1,10 @@
+.photo-card{
+    width: 33%;
+}
+
+.photo-card{
+    &__img{
+        display: inline-block;
+        width: 100%;
+    }
+}
