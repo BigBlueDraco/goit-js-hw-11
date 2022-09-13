@@ -5,7 +5,7 @@ export class pixabayAPI{
     static query = "";
     static key = "29897039-6335e8959bf94ffd3acb5a033"
     static image_type ="photo"
-    static per_page = "100"
+    static per_page = "10"
     static orientation = "horizontal"
     static safesearch = "true"
     static page = 1;
