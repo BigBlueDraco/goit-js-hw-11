@@ -2,17 +2,17 @@ import axios from "axios";
 
 export class pixabayAPI{
     static baseUrl = "https://pixabay.com/api/";
-    static query = "cat";
+    static query = "";
     static key = "29897039-6335e8959bf94ffd3acb5a033"
     static image_type ="photo"
-    static per_page = "10"
+    static per_page = "100"
     static orientation = "horizontal"
     static safesearch = "true"
+    static page = 1;
     static async fetchImg(q = "") {
         if(q.trim()){
-            pixabayAPI.query = q.trim().toLocaleLowerCase();
+           pixabayAPI.query = q; 
         }
-        // const resp = await axios.get(`${baseUrl}?key=${key}&q=${query}&image_type=${image_type}&per_page=${per_page}&orientation=${orientation}&safesearch=${safesearch}`)
         const resp = await axios.get(`${pixabayAPI.baseUrl}`, {
             params: {
                 key: pixabayAPI.key,
@@ -21,10 +21,15 @@ export class pixabayAPI{
                 per_page: pixabayAPI.per_page,
                 orientation: pixabayAPI.orientation,
                 safesearch: pixabayAPI.safesearch,
-                page: 3,
+                page: pixabayAPI.page,
             }
         })
-
-        return  resp.data.hits;  
+        console.log(resp.data);
+        return  resp.data;  
+    }
+    static async loadNextPage(){
+        pixabayAPI.page+=1;
+        const res = await pixabayAPI.fetchImg();
+        return res;
     }
 }

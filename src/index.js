@@ -1,7 +1,13 @@
-import { displayGallery } from "./js/displayGallery";
-import {pixabayAPI} from "./js/pixabayAPI"
+import { displayGallery, displayNextPage } from "./js/displayGallery";
+var lightbox = new SimpleLightbox('.gallery a');
 
-const search = document.querySelector("#js-search-form")
+const search = document.querySelector("#js-search-form");
+const loadMore = document.querySelector(".js-load-more");
+
+
+loadMore.addEventListener("click", (e)=>{
+    displayNextPage();
+})
 
 search.addEventListener("submit", (e)=>{
     e.preventDefault();
