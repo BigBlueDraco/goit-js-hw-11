@@ -1,5 +1,4 @@
-import simpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css"
+// import "simplelightbox/dist/simple-lightbox.min.css"
 import { displayGallery, displayNextPage } from "./js/displayGallery";
 
 

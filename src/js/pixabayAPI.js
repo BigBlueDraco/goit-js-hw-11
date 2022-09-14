@@ -5,7 +5,7 @@ export class pixabayAPI {
     static query = "";
     static key = "29897039-6335e8959bf94ffd3acb5a033"
     static image_type = "photo"
-    static per_page = "200"
+    static per_page = "10"
     static orientation = "horizontal"
     static safesearch = "true"
     static page = 1;
@@ -18,14 +18,12 @@ export class pixabayAPI {
                 key: pixabayAPI.key,
                 q: pixabayAPI.query,
                 image_type: pixabayAPI.image_type,
-                per_page: "200",
+                per_page: pixabayAPI.per_page,
                 orientation: pixabayAPI.orientation,
                 safesearch: pixabayAPI.safesearch,
                 page: pixabayAPI.page,
             }
         })
-        console.log("1" + pixabayAPI.per_page)
-        console.log(resp.data);
         return resp.data;
     }
     static async loadNextPage() {
