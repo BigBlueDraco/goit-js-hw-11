@@ -8,6 +8,7 @@ export async function displayGallery(q){
     const {hits, totalHits} = await pixabayAPI.fetchImg(q);
     countryInfo.innerHTML = galleryMarkup(hits);
     curentHits=0;
+    
     maxHits = totalHits;
     Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`)
     loadMore.style.display ='inline-block';
